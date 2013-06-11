@@ -33,6 +33,23 @@ There are four properties for you to set up.
 
 It's your responsibility to set up `delegate`, `columnCount`, and `itemWidth`, they are required. But `sectionInset` is optional.
 
+You can set these properties in viewDidLoad, like follows :
+```objc
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    UICollectionViewWaterfallLayout * layout = (UICollectionViewWaterfallLayout *)self.collectionView.collectionViewLayout;
+    layout.delegate = ...; // probably self
+    layout.columnCount = ...;
+    layout.itemWidth = ...;
+    layout.sectionInset = ...;
+
+    ...
+}
+
+```
+
 #### Step 2
 And you also need to implement one method in your delegate for the `UICollectionViewDelegateWaterfallLayout` protocol.
 
